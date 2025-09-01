@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>株式会社Airu | 未来をつなぐAIテクノロジー</title>
+  <meta name="description" content="株式会社AiruはAI・生成AI・クラウドを軸に、業務効率化支援からWeb/アプリ開発までトータルで支援します。">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">株式会社Airu</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="メニューを開く"></label>
+      <nav>
+        <a href="index.html">ホーム</a>
+        <a href="about.html">会社概要</a>
+        <a class="cta" href="contact.html">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>宇宙規模の発想で、<br class="sp-only" />未来をつなぐ。</h1>
+        <p class="lead">AIとクラウドで、事業の可能性を加速させるパートナー。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="contact.html">まずは相談する</a>
+          <a class="btn ghost" href="about.html">会社を知る</a>
+        </div>
+      </div>
+      <div class="shooting-star" aria-hidden="true"></div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <h2>事業内容</h2>
+        <p class="subtext">AI/生成AIを中心とした総合的な開発・運用・教育支援</p>
+        <div class="grid">
+          <article class="card">
+            <h3>AIソフトウェア開発</h3>
+            <p>AI技術を活用したソフトウェア/アプリの企画・開発・販売・保守。</p>
+          </article>
+          <article class="card">
+            <h3>生成AIコンテンツ</h3>
+            <p>テキスト・画像・動画の生成AIを用いた制作・提供・販売。</p>
+          </article>
+          <article class="card">
+            <h3>業務自動化/効率化</h3>
+            <p>RPA・スクリプト・データ分析で業務を最適化し、レポートを自動生成。</p>
+          </article>
+          <article class="card">
+            <h3>チャットボット/NLP</h3>
+            <p>自然言語処理を用いた対話/検索システムの設計・開発・運用。</p>
+          </article>
+          <article class="card">
+            <h3>ML/DL 研究・運用</h3>
+            <p>機械学習/ディープラーニングモデルの設計・学習・評価・MLOps。</p>
+          </article>
+          <article class="card">
+            <h3>AI導入コンサル/研修</h3>
+            <p>導入設計から教育まで、定着まで伴走するコンサルティング。</p>
+          </article>
+          <article class="card">
+            <h3>Web/EC/LP制作</h3>
+            <p>UI/UX設計から構築・運用・保守までワンストップで支援。</p>
+          </article>
+          <article class="card">
+            <h3>スマホ/Webアプリ</h3>
+            <p>iOS/Android・Webアプリの開発、リリース、継続改善。</p>
+          </article>
+          <article class="card">
+            <h3>クラウド・SaaS・API</h3>
+            <p>クラウド基盤やSaaS、APIの設計・開発・提供。</p>
+          </article>
+          <article class="card">
+            <h3>SEO/マーケ/広告</h3>
+            <p>SEO、Webマーケティング、SNS運用支援、広告運用の最適化。</p>
+          </article>
+          <article class="card">
+            <h3>デジタル制作</h3>
+            <p>動画・イラスト・グラフィック等のコンテンツ制作・販売。</p>
+          </article>
+          <article class="card">
+            <h3>人材育成/紹介</h3>
+            <p>IT人材の育成・教育、派遣・紹介（必要に応じ免許取得）。</p>
+          </article>
+        </div>
+        <div class="center">
+          <a class="btn ghost" href="about.html#purpose">定款ベースの詳細を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>AI活用の初回相談（無料）</h2>
+        <p>課題整理から最適解のご提案まで、オンラインで気軽にご相談いただけます。</p>
+        <a class="btn primary" href="contact.html">お問い合わせへ</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 株式会社Airu</small>
+    </div>
+  </footer>
+
+  <script>
+    // optional: close nav on link click (mobile)
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('nav-toggle');
+      document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => {
+        if (toggle.checked) toggle.checked = false;
+      }));
+    });
+  </script>
+</body>
+</html>

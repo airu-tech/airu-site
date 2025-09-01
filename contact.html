@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>お問い合わせ | 株式会社Airu</title>
+  <meta name="description" content="株式会社Airuへのお問い合わせフォーム。">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">株式会社Airu</a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="メニューを開く"></label>
+      <nav>
+        <a href="index.html">ホーム</a>
+        <a href="about.html">会社概要</a>
+        <a class="active cta" href="contact.html">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>お問い合わせ</h1>
+        <p>案件のご相談、資料請求、採用・協業のご連絡などお気軽にどうぞ。</p>
+      </div>
+    </section>
+
+    <!-- Netlify Forms 対応（GitHub Pages/Vercel では Formspree 等に切替可能） -->
+    <section class="container">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="form"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>Bot対策: <input name="bot-field" /></label>
+        </p>
+
+        <label>
+          お名前 <span class="req">必須</span>
+          <input type="text" name="name" required />
+        </label>
+
+        <label>
+          メールアドレス <span class="req">必須</span>
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          件名
+          <input type="text" name="subject" />
+        </label>
+
+        <label>
+          お問い合わせ内容 <span class="req">必須</span>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+
+        <div class="actions">
+          <button class="btn primary" type="submit">送信する</button>
+          <a class="btn ghost" href="index.html">ホームへ戻る</a>
+        </div>
+
+        <p class="help small">
+          ※ GitHub Pages/Vercelにデプロイする場合は、フォーム送信先を
+          <code>action="https://formspree.io/f/XXXXXXX"</code> などに変更してください。
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 株式会社Airu</small>
+    </div>
+  </footer>
+</body>
+</html>

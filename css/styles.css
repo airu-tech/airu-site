@@ -1,0 +1,186 @@
+/* ====== 株式会社Airu - 宇宙イメージのスタイル ====== */
+/* ベース */
+:root {
+  --bg-deep: #090a0f;
+  --bg-mid: #0d1230;
+  --accent: #00c8ff;
+  --accent-2: #8a7dff;
+  --text: #e6f0ff;
+  --muted: #a8b2c1;
+  --card: rgba(255,255,255,.06);
+  --blur: blur(16px);
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: -apple-system,BlinkMacSystemFont,"Yu Gothic","YuGothic",Meiryo,sans-serif;
+  background:
+    radial-gradient(1200px 800px at 20% -10%, #1b2a72 0%, transparent 60%),
+    radial-gradient(1000px 600px at 80% 0%, #3b1d64 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg-mid), var(--bg-deep));
+  overflow-x: hidden;
+}
+
+/* 星屑レイヤー */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.8) 50%, transparent 51%),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,.6) 50%, transparent 51%),
+    radial-gradient(1px 1px at 70% 30%, rgba(255,255,255,.7) 50%, transparent 51%),
+    radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,.8) 50%, transparent 51%),
+    radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,.6) 50%, transparent 51%);
+  opacity: .6;
+  z-index: -2;
+  animation: twinkle 8s linear infinite;
+}
+body::after {
+  filter: blur(0.5px) brightness(1.2);
+  animation-duration: 12s;
+  z-index: -3;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: .55; }
+  50% { opacity: .85; }
+}
+
+/* ヘッダー & ナビ */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(5, 7, 14, .55);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { color: #fff; text-decoration: none; font-weight: 700; letter-spacing: .02em; }
+nav a { color: var(--text); text-decoration: none; margin-left: 18px; opacity: .9; }
+nav a:hover, nav a.active { opacity: 1; }
+nav a.cta { padding: 10px 14px; border: 1px solid rgba(255,255,255,.2); border-radius: 999px; }
+
+/* モバイルメニュー */
+.nav-toggle { display: none; }
+.nav-toggle-label { display: none; }
+@media (max-width: 780px) {
+  .nav-toggle-label {
+    display: block;
+    width: 30px; height: 24px; cursor: pointer; position: relative;
+  }
+  .nav-toggle-label::before, .nav-toggle-label::after, .nav-toggle-label span {
+    content: ""; position: absolute; left: 0; right: 0; height: 2px; background: #fff;
+  }
+  .nav-toggle-label::before { top: 0; }
+  .nav-toggle-label::after { bottom: 0; }
+  .nav-toggle-label span { top: 11px; }
+  .nav nav { display: none; }
+  .nav { gap: 10px; }
+  .nav > nav { position: absolute; top: 54px; right: 4%; background: rgba(5,7,14,.95); padding: 14px 16px; border-radius: 12px; box-shadow: var(--shadow); }
+  #nav-toggle:checked ~ nav { display: block; }
+}
+
+/* ヒーロー */
+.hero {
+  position: relative;
+  padding: 80px 0 110px;
+  text-align: center;
+  overflow: hidden;
+}
+.hero .lead { color: var(--muted); margin-top: 8px; }
+.hero-actions { margin-top: 22px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* 流れ星 */
+.shooting-star {
+  position: absolute;
+  top: -40px; left: 20%;
+  width: 2px; height: 140px;
+  background: linear-gradient(180deg, rgba(255,255,255,.9), rgba(255,255,255,0));
+  filter: drop-shadow(0 0 6px rgba(255,255,255,.7));
+  transform: rotate(35deg);
+  animation: shoot 6s ease-in-out infinite;
+}
+@keyframes shoot {
+  0%   { transform: translateX(0) translateY(0) rotate(35deg); opacity: 0; }
+  10%  { opacity: 1; }
+  50%  { transform: translateX(500px) translateY(200px) rotate(35deg); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* 見出し */
+h1 { font-size: clamp(34px, 5.4vw, 56px); margin: 0; letter-spacing: .01em; }
+h2 { font-size: clamp(24px, 3.2vw, 34px); margin: 0 0 12px; }
+h3 { font-size: 18px; margin: 0 0 6px; }
+
+/* ボタン */
+.btn {
+  display: inline-block; text-decoration: none;
+  padding: 12px 18px; border-radius: 14px; border: 1px solid rgba(255,255,255,.25);
+  transition: transform .15s ease, box-shadow .15s ease, background .2s;
+}
+.btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #071022; border: none; box-shadow: 0 6px 24px rgba(0, 200, 255, .35); }
+.btn.ghost   { color: var(--text); }
+.btn:hover { transform: translateY(-1px); }
+
+/* セクション */
+.services { padding: 64px 0; }
+.subtext { color: var(--muted); margin: 6px 0 24px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card {
+  background: var(--card); border: 1px solid rgba(255,255,255,.08);
+  border-radius: var(--radius); padding: 18px;
+  backdrop-filter: var(--blur); box-shadow: var(--shadow);
+}
+.center { text-align: center; margin-top: 18px; }
+
+@media (max-width: 980px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+
+/* CTA バンド */
+.cta-band {
+  padding: 64px 0;
+  background: radial-gradient(700px 400px at 80% -10%, rgba(138,125,255,.25), rgba(138,125,255,0)),
+              linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+  border-top: 1px solid rgba(255,255,255,.06);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+/* 会社概要 */
+.page-hero { padding: 70px 0 30px; text-align: center; }
+.company { padding: 24px 0 64px; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.def { margin: 0; }
+.def dt { color: var(--muted); font-size: 14px; }
+.def dd { margin: 0 0 12px; font-size: 16px; }
+ul.check { padding-left: 18px; }
+ul.check li { margin: 8px 0; }
+.note { color: var(--muted); margin-top: 10px; }
+.small { font-size: 12px; }
+
+/* フォーム */
+.form { max-width: 680px; margin: 10px auto 60px; background: var(--card); padding: 20px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,.08); backdrop-filter: var(--blur); box-shadow: var(--shadow); }
+.form label { display: block; margin: 14px 0; }
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+  width: 100%; padding: 12px 14px; border-radius: 12px;
+  background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.14);
+  color: var(--text);
+}
+.form .actions { display: flex; gap: 10px; margin-top: 10px; }
+.req { color: var(--accent); font-size: 12px; margin-left: 6px; }
+.hidden { display: none; }
+
+/* フッター */
+.site-footer { padding: 26px 0; border-top: 1px solid rgba(255,255,255,.06); background: rgba(5,7,14,.55); }
+
+/* 細かい */
+.sp-only { display: none; }
+@media (max-width: 640px) { .sp-only { display: inline; } }
