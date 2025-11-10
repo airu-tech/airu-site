@@ -8,73 +8,54 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">株式会社Airu</a>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <label for="nav-toggle" class="nav-toggle-label" aria-label="メニューを開く"></label>
+ <header>
+    <div class="container header-center">
+      <h1 class="logo">株式会社Airu</h1>
       <nav>
-        <a href="index.html">ホーム</a>
-        <a href="about.html">会社概要</a>
-        <a class="active cta" href="contact.html">お問い合わせ</a>
+        <ul class="nav-menu">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="news.html">ニュース</a></li>
+          <li><a href="works.html">実績紹介</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1>お問い合わせ</h1>
-        <p>案件のご相談、資料請求、採用・協業のご連絡などお気軽にどうぞ。</p>
-      </div>
-    </section>
+  <section class="page-hero">
+    <div class="container">
+      <h1>お問い合わせ</h1>
+      <p>サービスや協業に関するご相談など、お気軽にご連絡ください。</p>
+    </div>
+  </section>
 
-    <!-- Netlify Forms 対応（GitHub Pages/Vercel では Formspree 等に切替可能） -->
-    <section class="container">
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="form"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden">
-          <label>Bot対策: <input name="bot-field" /></label>
-        </p>
+  <section class="contact-form">
+    <div class="container">
+      <h2>お問い合わせフォーム</h2>
+      <form name="contact" method="POST" data-netlify="true">
+       <input type="hidden" name="form-name" value="contact">
 
-        <label>
-          お名前 <span class="req">必須</span>
-          <input type="text" name="name" required />
-        </label>
+       <label for="name">お名前</label>
+       <input type="text" id="name" name="name" required>
 
-        <label>
-          メールアドレス <span class="req">必須</span>
-          <input type="email" name="email" required />
-        </label>
+       <label for="email">メールアドレス</label>
+       <input type="email" id="email" name="email" required>
 
-        <label>
-          件名
-          <input type="text" name="subject" />
-        </label>
+       <label for="subject">件名</label>
+       <input type="text" id="subject" name="subject">
+ 
+       <label for="message">お問い合わせ内容</label>
+       <textarea id="message" name="message" rows="6" required></textarea>
 
-        <label>
-          お問い合わせ内容 <span class="req">必須</span>
-          <textarea name="message" rows="6" required></textarea>
-        </label>
-
-        <div class="actions">
-          <button class="btn primary" type="submit">送信する</button>
-          <a class="btn ghost" href="index.html">ホームへ戻る</a>
-        </div>
-
-        <p class="help small">
-          ※ GitHub Pages/Vercelにデプロイする場合は、フォーム送信先を
-          <code>action="https://formspree.io/f/XXXXXXX"</code> などに変更してください。
-        </p>
+       <button type="submit">送信する</button>
       </form>
-    </section>
-  </main>
+
+    </div>
+  </section>
+</main>
+
 
   <footer class="site-footer">
     <div class="container">
