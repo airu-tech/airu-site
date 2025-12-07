@@ -36,34 +36,35 @@
 
       <!-- ★ここが重要 -->
       <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-        >
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
 
-          <!-- Netlify識別用 -->
-          <input type="hidden" name="form-name" value="contact">
+        <!-- Netlify識別用（必須） -->
+        <input type="hidden" name="form-name" value="contact">
 
-          <!-- スパム対策（必須） -->
-          <p style="display:none">
-            <label>
-              Don’t fill this out:
-              <input name="bot-field">
-            </label>
-          </p>
+        <!-- スパム対策 -->
+        <p style="display:none">
+          <label>
+            Don’t fill this out:
+            <input name="bot-field">
+          </label>
+        </p>
 
-          <label>お名前</label>
-          <input type="text" name="name" required>
+        <label>お名前</label>
+        <input type="text" name="name" required>
 
-          <label>メールアドレス</label>
-          ✅ <input type="email" name="email" required>
+        <label>メールアドレス</label>
+        <input type="email" name="email" required>
 
-          <label>お問い合わせ内容</label>
-          <textarea name="message" rows="6" required></textarea>
+        <label>お問い合わせ内容</label>
+        <textarea name="message" rows="6" required></textarea>
 
-          <button type="submit">送信する</button>
-        </form>
+        <button type="submit">送信する</button>
+      </form>
+
 
 
     </div>
