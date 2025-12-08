@@ -6,6 +6,29 @@
   <title>株式会社Airu</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
+<script>
+fetch('data/news.json')
+  .then(response => response.json())
+  .then(data => {
+    const list = document.getElementById('news-list');
+    const latest = data.slice(0, 3);
+
+    latest.forEach(item => {
+      const article = document.createElement('article');
+      article.className = 'news-card';
+
+      article.innerHTML = `
+        <time>${item.date}</time>
+        <h3>${item.title}</h3>
+        <p>${item.body}</p>
+      `;
+
+      list.appendChild(article);
+    });
+  });
+</script>
+
 <body>
   <!-- ヘッダー -->
   <header>
@@ -34,27 +57,16 @@
   </section>
 
   <!-- ニュースセクション（カード型） -->
-  <section class="news">
+  <section class="top-news">
     <div class="container">
-      <h2>ニュース</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="card-body">
-            <span class="date">2025-09-16</span>
-            <h3>お任せITバックオフィス</h3>
-            <p>ITインフラに関するバックオフィス業務を開始しました。</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-body">
-            <span class="date">2025-09-16</span>
-            <h3>株式会社Airu 設立のお知らせ</h3>
-            <p>未来を創るテクノロジーカンパニーとして、新たにスタートしました。</p>
-          </div>
-        </article>
-      </div>
+      <h2>最新ニュース</h2>
+      <div id="news-list"></div>
+
+      <p class="more">
+      <a href="news.html">ニュース一覧を見る</a>
+      </p>
     </div>
-  </section>
+   </section>
 
   <!-- 実績紹介セクション -->
   <section class="case-studies">

@@ -382,3 +382,35 @@ section.visible {
   color: #666;
   margin-bottom: 10px;
 }
+
+/* top news */
+.top-news {
+  padding: 80px 0;
+  background: #fafafa;
+}
+
+.top-news h2 {
+  margin-bottom: 30px;
+}
+
+.top-news .news-card {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.top-news time {
+  display: block;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.top-news h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.top-news .more {
+  margin-top: 30px;
+}
+
