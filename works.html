@@ -24,26 +24,29 @@
 
   <main>
      <section class="works-list">
-      <div class="container">
+  <div class="container">
+    <div id="works-all"></div>
+  </div>
+</section>
 
-        <article class="work-card">
-          <h2>コーポレートサイト制作</h2>
-          <p class="client">業種：福祉事業</p>
-          <p>
-            企業イメージを大切にしたコーポレートサイトを制作しました。
-          </p>
-        </article>
+<script>
+fetch('/data/works.json')
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById('works-all');
+    data.forEach(item => {
+      const article = document.createElement('article');
+      article.className = 'work-card';
+      article.innerHTML = `
+        <h2>${item.title}</h2>
+        <p class="work-meta">${item.category} / ${item.client}</p>
+        <p>${item.description}</p>
+      `;
+      list.appendChild(article);
+    });
+  });
+</script>
 
-        <article class="work-card">
-          <h2>ホームページリニューアル</h2>
-          <p class="client">業種：自動車整備</p>
-          <p>
-            情報整理とスマホ対応を重視したリニューアルを行いました。
-          </p>
-        </article>
-
-      </div>
-     </section>
 
 
       

@@ -414,3 +414,23 @@ section.visible {
   margin-top: 30px;
 }
 
+/* top works */
+.top-works {
+  padding: 80px 0;
+}
+
+.work-card {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.work-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.work-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}

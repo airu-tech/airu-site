@@ -29,6 +29,27 @@ fetch('data/news.json')
   });
 </script>
 
+<script>
+fetch('/data/works.json')
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById('works-list');
+    if (!list) return;
+
+    data.slice(0, 3).forEach(item => {
+      const article = document.createElement('article');
+      article.className = 'work-card';
+      article.innerHTML = `
+        <h3>${item.title}</h3>
+        <p class="work-meta">${item.category} / ${item.client}</p>
+        <p>${item.description}</p>
+      `;
+      list.appendChild(article);
+    });
+  });
+</script>
+
+
 <body>
   <!-- ヘッダー -->
   <header>
@@ -69,25 +90,16 @@ fetch('data/news.json')
    </section>
 
   <!-- 実績紹介セクション -->
-  <section class="case-studies">
-    <div class="container">
-      <h2>実績紹介</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>ホームページ作成</h3>
-          <p>福祉施設のホームページを作成いたしました。</p>
-        </article>
-        <article class="card">
-          <h3>ホームページ作成</h3>
-          <p>自動車整備工場のホームページを作成いたしました。</p>
-        </article>
-        <article class="card">
-          <h3>ホームページ作成</h3>
-          <p>一般社団法人のホームページを作成いたしました。</p>
-        </article>
-      </div>
-    </div>
-  </section>
+  <section class="top-works">
+  <div class="container">
+    <h2>実績紹介</h2>
+    <div id="works-list"></div>
+
+    <p class="more">
+      <a href="works.html">実績一覧を見る</a>
+    </p>
+  </div>
+</section>
 
   <!-- フッター -->
   <footer>
