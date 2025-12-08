@@ -310,3 +310,75 @@ section.visible {
   background: #0047ff;
   transform: translateY(-2px);
 }
+
+/* thanks page */
+.thank-you {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.thank-you p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.thank-you .btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: opacity .3s;
+}
+
+.thank-you .btn:hover {
+  opacity: .75;
+}
+
+/* news */
+.news-list {
+  padding: 80px 0;
+}
+
+.news-card {
+  border-bottom: 1px solid #eee;
+  padding: 30px 0;
+}
+
+.news-card time {
+  display: block;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.news-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.news-card p {
+  line-height: 1.7;
+}
+
+/* works */
+.works-list {
+  padding: 80px 0;
+}
+
+.work-card {
+  margin-bottom: 40px;
+}
+
+.work-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.work-card .client {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
