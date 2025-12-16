@@ -23,13 +23,28 @@
   </header>
 
   <main>
-     <section class="works-list">
-  <div class="container">
-    <div id="works-all"></div>
-  </div>
-</section>
+    <section class="page-hero">
+      <div class="container">
+        <h1>実績紹介</h1>
+      </div>
+    </section>
 
-<script>
+     <section class="works-list">
+       <div class="container">
+        <!-- ★ここにJSONの実績紹介が自動表示されます -->
+       <div id="works-list"></div>
+       </div>
+     </section>
+</main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 株式会社Airu</p>
+    </div>
+  </footer>
+
+
+　<script>
 fetch('/data/works.json')
   .then(res => res.json())
   .then(data => {
@@ -46,16 +61,5 @@ fetch('/data/works.json')
     });
   });
 </script>
-
-
-
-      
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 株式会社Airu</p>
-    </div>
-  </footer>
 </body>
 </html>
