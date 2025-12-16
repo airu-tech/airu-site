@@ -469,3 +469,13 @@ section.visible {
   border-radius: 999px;
 }
 .pdf-link:hover { opacity: 0.85; }
+
+/* news page image size */
+.news-image{
+  width: 100%;
+  max-width: 520px;   /* ←ここでサイズ調整 */
+  height: auto;
+  display: block;
+  margin: 16px auto;
+  border-radius: 10px;
+}

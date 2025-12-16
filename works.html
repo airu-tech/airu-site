@@ -32,10 +32,10 @@
      <section class="works-list">
        <div class="container">
         <!-- ★ここにJSONの実績紹介が自動表示されます -->
-       <div id="works-list"></div>
+       <div id="works-all"></div>
        </div>
      </section>
-</main>
+  </main>
 
   <footer>
     <div class="container">
@@ -44,22 +44,30 @@
   </footer>
 
 
-　<script>
+<script>
 fetch('/data/works.json')
   .then(res => res.json())
   .then(data => {
     const list = document.getElementById('works-all');
+    if (!list) return;
+
+    list.innerHTML = '';
+
     data.forEach(item => {
       const article = document.createElement('article');
       article.className = 'work-card';
+
       article.innerHTML = `
-        <h2>${item.title}</h2>
-        <p class="work-meta">${item.category} / ${item.client}</p>
-        <p>${item.description}</p>
+        <h2>${item.title || ''}</h2>
+        <p class="work-meta">${(item.category || '')} ${(item.client ? '/ ' + item.client : '')}</p>
+        <p>${item.description || ''}</p>
       `;
+
       list.appendChild(article);
     });
-  });
+  })
+  .catch(err => console.error('works load error:', err));
 </script>
+
 </body>
 </html>

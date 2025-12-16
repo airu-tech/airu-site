@@ -8,26 +8,30 @@
 </head>
 
 <script>
-fetch('data/news.json')
-  .then(response => response.json())
+fetch('/data/news.json')
+  .then(res => res.json())
   .then(data => {
     const list = document.getElementById('news-list');
-    const latest = data.slice(0, 3);
+    if (!list) return;
 
-    latest.forEach(item => {
+    list.innerHTML = '';
+
+    data.slice(0, 3).forEach(item => {
       const article = document.createElement('article');
       article.className = 'news-card';
 
       article.innerHTML = `
-        <time>${item.date}</time>
-        <h3>${item.title}</h3>
-        <p>${item.body}</p>
+        <time class="news-date">${item.date || ''}</time>
+        <h3 class="news-title">${item.title || ''}</h3>
+        <p class="news-summary">${item.summary || item.content || ''}</p>
       `;
 
       list.appendChild(article);
     });
-  });
+  })
+  .catch(err => console.error(err));
 </script>
+
 
 <script>
 fetch('/data/works.json')
