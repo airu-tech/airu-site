@@ -23,59 +23,34 @@
   </header>
 
   <main>
-  <section class="page-hero">
-    <div class="container">
-      <h1>ニュース</h1>
-    </div>
-  </section>
+    <section class="page-hero">
+      <div class="container">
+        <h1>ニュース</h1>
+      </div>
+    </section>
 
-  <section class="news-list">
-    <div class="container">
-
-      <!-- ▼ ここから1記事 -->
-      <article class="news-card">
-        <time datetime="2025-03-01">2025.09.16</time>
-        <h2>株式会社Airu 公式サイトを公開しました</h2>
-        <p>
-          株式会社Airuの公式Webサイトを公開しました。
-        </p>
-      </article>
-      <!-- ▲ ここまで1記事 -->
-
-      <!-- ▼ コピペして増やす -->
-      <article class="news-card">
-        <time datetime="2025-02-15">2025.09.16</time>
-        <h2>事業内容ページを更新しました</h2>
-        <p>
-          提供サービスの内容をより分かりやすく整理しました。
-        </p>
-      </article>
-
-      <!-- ▼ ここから1記事 -->
-      <article class="news-card">
-        <time datetime="2025-09-16">2025.09.16</time>
-        <h2>ホームページ制作実績を追加しました</h2>
-        <p>
-          制作実績ページに新しい事例を追加しました。
-        </p>
-      </article>
-      <!-- ▲ ここまで1記事 -->
-
-    </div>
-  </section>
-</main>
-
+    <section class="news-list">
+      <div class="container">
+        <!-- ★ここにJSONのニュースが自動表示されます -->
+        <div id="news-list"></div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
       <p>&copy; 2025 株式会社Airu</p>
     </div>
   </footer>
+
   <script>
     fetch('/data/news.json')
       .then(res => res.json())
       .then(data => {
         const list = document.getElementById('news-list');
+        if (!list) return;
+
+        list.innerHTML = '';
 
         data.forEach(item => {
           const article = document.createElement('article');
@@ -100,7 +75,8 @@
 
           list.appendChild(article);
         });
-      });
+      })
+      .catch(err => console.error('news load error:', err));
   </script>
 </body>
 </html>
