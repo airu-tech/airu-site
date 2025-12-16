@@ -71,5 +71,36 @@
       <p>&copy; 2025 株式会社Airu</p>
     </div>
   </footer>
+  <script>
+    fetch('/data/news.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('news-list');
+
+        data.forEach(item => {
+          const article = document.createElement('article');
+          article.className = 'news-card';
+
+          const imageHtml = item.image
+            ? `<img src="${item.image}" alt="${item.title}" class="news-image">`
+            : '';
+
+          const pdfHtml = item.pdf
+            ? `<a href="${item.pdf}" class="pdf-link" download>📄 申込書PDFをダウンロード</a>`
+            : '';
+
+          article.innerHTML = `
+            <time class="news-date">${item.date}</time>
+            <h2 class="news-title">${item.title}</h2>
+            <p class="news-summary">${item.summary || ''}</p>
+            ${imageHtml}
+            <p class="news-body">${item.content || ''}</p>
+            ${pdfHtml}
+          `;
+
+          list.appendChild(article);
+        });
+      });
+  </script>
 </body>
 </html>
