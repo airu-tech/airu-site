@@ -575,6 +575,15 @@ section.visible {
   justify-items: center;
 }
  
+/* 5個のときだけ2段目を中央にする */
+.service-grid .service-item:nth-child(4) {
+  grid-column: 2;
+}
+
+.service-grid .service-item:nth-child(5) {
+  grid-column: 3;
+}
+
 .service-item {
   background: #f9fbff;
   padding: 20px;
@@ -607,4 +616,8 @@ section.visible {
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.service-item i {
+  font-size: 32px;
 }
