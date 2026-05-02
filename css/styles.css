@@ -169,9 +169,8 @@ section:nth-of-type(even) {
 
 /* ===== ヒーロー（トップページ専用） ===== */
 .hero {
-  text-align: center;
-  padding: 180px 20px 200px;
-  background: linear-gradient(to bottom, #eef3ff, #ffffff);
+  background: linear-gradient(135deg, #2d6cdf, #6c8cff);
+  color: white;
 }
 
 .hero h2 {
@@ -566,4 +565,30 @@ section.visible {
 .cta-btn:hover {
   background: #1e4fbf;
   transform: translateY(-2px);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.service-item {
+  background: #f9fbff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.service-item i {
+  font-size: 28px;
+  color: #2d6cdf;
+  margin-bottom: 10px;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
