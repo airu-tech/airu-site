@@ -625,3 +625,98 @@ section.visible {
     text-align: center;
   }
 }
+
+/* ===== スマホ最適化 ===== */
+@media (max-width: 768px) {
+
+  /* 全体余白 */
+  .container {
+    padding: 0 16px;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  /* ヘッダー */
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-menu a {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  /* ヒーロー */
+  .hero h2 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  /* 見出し */
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+
+  /* ニュース・実績 */
+  .news-card,
+  .work-card {
+    padding: 16px 0;
+  }
+
+  /* サービスグリッド */
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .service-item {
+    padding: 16px;
+  }
+
+  .service-item i {
+    font-size: 24px;
+  }
+
+  /* 最後だけ中央 */
+  .service-grid .service-item:last-child {
+    grid-column: span 2;
+  }
+
+  /* サービスカード */
+  .service-card {
+    padding: 20px;
+  }
+
+  /* ボタン（超重要） */
+  .cta-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  /* フッター */
+  footer {
+    font-size: 0.8rem;
+  }
+
+  button, a {
+  min-height: 44px;
+  }
+
+  html {
+  scroll-behavior: smooth;
+  }
+}
