@@ -58,10 +58,17 @@ fetch('/data/works.json')
 <body>
   <!-- ヘッダー -->
   <header>
-  <div class="container header-center">
+  <div class="container header-flex">
+
     <h1 class="logo">株式会社Airu</h1>
+
+    <!-- ハンバーガー -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      ☰
+    </div>
+
     <nav>
-      <ul class="nav-menu">
+      <ul class="nav-menu" id="navMenu">
         <li><a href="index.html">ホーム</a></li>
         <li><a href="about.html">会社概要</a></li>
         <li><a href="news.html">ニュース</a></li>
@@ -69,6 +76,7 @@ fetch('/data/works.json')
         <li><a href="contact.html">お問い合わせ</a></li>
       </ul>
     </nav>
+
   </div>
 </header>
 
@@ -173,6 +181,12 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 fadeElements.forEach(el => observer.observe(el));
+</script>
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("navMenu");
+  menu.classList.toggle("active");
+}
 </script>
 </body>
 </html>
