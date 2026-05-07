@@ -764,3 +764,39 @@ section.visible {
 }
 
 }
+
+/* ===== 認定・実績セクション ===== */
+
+.top-cert {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.cert-card {
+  background: linear-gradient(135deg, #eef3ff, #ffffff);
+  border: 1px solid #e0e6ff;
+  padding: 40px;
+  border-radius: 14px;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+  .cert-card {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+}
+
+.cert-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #0d1b4d;
+}
+
+.cert-lead {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.cert-desc {
+  color: #555;
+}
