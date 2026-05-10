@@ -13,12 +13,10 @@
 
     <h1 class="logo">株式会社Airu</h1>
 
-    <!-- ハンバーガー -->
-    <div class="menu-toggle" id="menu-toggle">
+    <div class="menu-toggle" onclick="toggleMenu()">
       ☰
     </div>
 
-    <!-- メニュー -->
     <nav id="nav-menu">
       <ul class="nav-menu">
         <li><a href="index.html">ホーム</a></li>
@@ -89,5 +87,11 @@
       })
       .catch(err => console.error('news load error:', err));
   </script>
+  <script>
+function toggleMenu() {
+  const menu = document.getElementById("nav-menu");
+  menu.classList.toggle("active");
+}
+</script>
 </body>
 </html>

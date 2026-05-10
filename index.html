@@ -62,12 +62,10 @@ fetch('/data/works.json')
 
     <h1 class="logo">株式会社Airu</h1>
 
-    <!-- ハンバーガー -->
-    <div class="menu-toggle" id="menu-toggle">
+    <div class="menu-toggle" onclick="toggleMenu()">
       ☰
     </div>
 
-    <!-- メニュー -->
     <nav id="nav-menu">
       <ul class="nav-menu">
         <li><a href="index.html">ホーム</a></li>
@@ -81,7 +79,6 @@ fetch('/data/works.json')
 
   </div>
 </header>
-
 
 
   <!-- ヒーローセクション -->
@@ -202,7 +199,7 @@ fadeElements.forEach(el => observer.observe(el));
 </script>
 <script>
 function toggleMenu() {
-  const menu = document.getElementById("navMenu");
+  const menu = document.getElementById("nav-menu");
   menu.classList.toggle("active");
 }
 </script>
