@@ -937,212 +937,8 @@ section.visible {
   
 }
 
-# kaigo.html
 
-```html
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>介護情報基盤導入支援 | 株式会社Airu</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
 
-<!-- ヘッダー -->
-<header>
-  <div class="container header-flex">
-
-    <h1 class="logo">株式会社Airu</h1>
-
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
-    </div>
-
-    <nav id="nav-menu">
-      <ul class="nav-menu">
-        <li><a href="index.html">ホーム</a></li>
-        <li><a href="about.html">会社概要</a></li>
-        <li><a href="news.html">ニュース</a></li>
-        <li><a href="works.html">実績紹介</a></li>
-        <li><a href="kaigo.html">介護情報基盤</a></li>
-        <li><a href="contact.html">お問い合わせ</a></li>
-      </ul>
-    </nav>
-
-  </div>
-</header>
-
-<!-- ヒーロー -->
-<section class="kaigo-hero">
-  <div class="kaigo-overlay"></div>
-
-  <div class="container kaigo-content">
-    <span class="kaigo-badge">
-      介護情報基盤 導入支援
-    </span>
-
-    <h1>
-      介護DXを、もっと実務的に。
-    </h1>
-
-    <p>
-      株式会社Airuは、介護情報基盤への対応や
-      PC・ネットワーク・セキュリティ環境整備を含め、
-      介護事業所様のDX導入を支援しています。
-    </p>
-
-    <a href="contact.html" class="hero-btn">
-      ご相談はこちら
-    </a>
-  </div>
-</section>
-
-<!-- サービス -->
-<section class="kaigo-section">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Airuの支援内容</h2>
-      <p>
-        制度対応だけで終わらない、現場運用まで考えた導入支援を行います。
-      </p>
-    </div>
-
-    <div class="kaigo-grid">
-
-      <div class="kaigo-card">
-        <i class="fas fa-network-wired"></i>
-        <h3>介護情報基盤対応</h3>
-        <p>
-          介護情報基盤への接続準備や、必要なIT環境整備をサポートします。
-        </p>
-      </div>
-
-      <div class="kaigo-card">
-        <i class="fas fa-laptop"></i>
-        <h3>PC・IT機器導入</h3>
-        <p>
-          法人向けPC、Wi-Fi、ネットワーク機器などを事業所規模に応じてご提案します。
-        </p>
-      </div>
-
-      <div class="kaigo-card">
-        <i class="fas fa-shield-halved"></i>
-        <h3>セキュリティ対策</h3>
-        <p>
-          情報漏えい対策やアクセス管理など、介護現場に必要な安全対策をご支援します。
-        </p>
-      </div>
-
-      <div class="kaigo-card">
-        <i class="fas fa-robot"></i>
-        <h3>AI・業務効率化</h3>
-        <p>
-          AI活用による業務効率化やDX推進についてもご相談いただけます。
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- 導入の流れ -->
-<section class="kaigo-flow">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>導入までの流れ</h2>
-    </div>
-
-    <div class="flow-list">
-
-      <div class="flow-item">
-        <span>01</span>
-        <h3>ヒアリング</h3>
-        <p>
-          現在の運用環境や課題を確認します。
-        </p>
-      </div>
-
-      <div class="flow-item">
-        <span>02</span>
-        <h3>環境提案</h3>
-        <p>
-          必要な機器・構成・セキュリティ対策をご提案します。
-        </p>
-      </div>
-
-      <div class="flow-item">
-        <span>03</span>
-        <h3>導入支援</h3>
-        <p>
-          初期設定やネットワーク整備を含めて導入をサポートします。
-        </p>
-      </div>
-
-      <div class="flow-item">
-        <span>04</span>
-        <h3>運用フォロー</h3>
-        <p>
-          導入後の運用やトラブル相談にも対応します。
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="kaigo-cta">
-  <div class="container">
-
-    <div class="kaigo-cta-box">
-      <h2>
-        介護DX・IT導入について
-        お気軽にご相談ください
-      </h2>
-
-      <p>
-        小規模事業所様から法人様まで、状況に応じてご提案いたします。
-      </p>
-
-      <a href="contact.html" class="cta-btn">
-        お問い合わせはこちら
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p>&copy; 2025 株式会社Airu</p>
-  </div>
-</footer>
-
-<script>
-const toggle = document.getElementById('menu-toggle');
-const nav = document.getElementById('nav-menu');
-
-if(toggle){
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-}
-</script>
-
-</body>
-</html>
-```
-
----
-
-# styles.css に追加
-
-```css
 /* =====================================
    介護情報基盤ページ
 ===================================== */
@@ -1150,20 +946,21 @@ if(toggle){
 .kaigo-hero {
   position: relative;
 
-  background:
-    linear-gradient(rgba(0,0,0,0.45),
-    rgba(0,0,0,0.45)),
+  background-image:
+    linear-gradient(
+       rgba(0,0,0,0.0),
+       rgba(0,0,0,0.0)
+    ),
     url("../images/kaigo-hero.jpg");
 
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 
   min-height: 80vh;
 
   display: flex;
   align-items: center;
-
-  overflow: hidden;
 }
 
 .kaigo-content {
