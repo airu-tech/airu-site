@@ -1245,3 +1245,16 @@ section.visible {
     margin-top: 20px;
   }
 }
+
+@media (max-width: 768px) {
+
+  .hero,
+  .kaigo-hero {
+
+    min-height: 60vh;
+
+    background-size: cover;
+    background-position: 65% center;
+  }
+
+}
