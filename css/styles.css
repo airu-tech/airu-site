@@ -1262,16 +1262,30 @@ section.visible {
 
 @media (max-width: 768px) {
 
-  .hero,
-  .kaigo-hero {
+  /* トップページ */
+  .hero {
 
     min-height: 60vh !important;
 
     background-size: cover !important;
 
-    background-position: 70% center !important;
+    background-position: center center !important;
 
     background-repeat: no-repeat !important;
+  }
+
+  /* 介護情報基盤 */
+  .kaigo-hero {
+
+    min-height: 60vh !important;
+
+    background-size: contain !important;
+
+    background-position: center top !important;
+
+    background-repeat: no-repeat !important;
+
+    background-color: #eef3ff;
   }
 
 }
