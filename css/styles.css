@@ -1246,46 +1246,122 @@ section.visible {
   }
 }
 
+/* ===== 介護情報基盤メリット ===== */
+
+.kaigo-benefits {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.benefit-card {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  border-top: 5px solid #2d6cdf;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+  color: #0d1b4d;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.benefit-card p {
+  color: #555;
+  line-height: 1.9;
+}
+
+.kaigo-platform-diagram {
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+
+  margin: 40px auto;
+
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+/* =========================
+   介護情報基盤 図解
+========================= */
+
+.kaigo-diagram {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.kaigo-diagram .lead {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.kaigo-platform-diagram {
+  display: block;
+
+  width: 100%;
+  max-width: 1200px;
+
+  height: auto;
+
+  margin: 0 auto;
+
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* スマホ */
 @media (max-width: 768px) {
 
-  .hero,
-  .kaigo-hero {
+  .kaigo-platform-diagram {
+    width: 100%;
+    max-width: 100%;
 
-    min-height: 60vh;
-
-    background-size: cover;
-    background-position: 65% center;
+    border-radius: 12px;
   }
 
 }
-/* ===== Mobile Hero Fix ===== */
 
-@media (max-width: 768px) {
+/* =====================================
+   Hero Fix
+===================================== */
 
-  /* トップページ */
-  .hero {
+/* PC */
+.kaigo-hero {
+  min-height: 80vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 
-    min-height: 60vh !important;
+/* スマホ */
+@media (max-width:768px){
 
-    background-size: cover !important;
+  .kaigo-hero{
 
-    background-position: center center !important;
+    min-height: 55vh;
 
-    background-repeat: no-repeat !important;
-  }
+    background-size: contain;
 
-  /* 介護情報基盤 */
-  .kaigo-hero {
+    background-position: center top;
 
-    min-height: 60vh !important;
+    background-repeat: no-repeat;
 
-    background-size: contain !important;
-
-    background-position: center top !important;
-
-    background-repeat: no-repeat !important;
-
-    background-color: #eef3ff;
+    background-color:#eef3ff;
   }
 
 }
