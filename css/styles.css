@@ -1380,3 +1380,18 @@ section.visible {
   }
 
 }
+
+/* 強制スマホ対応 */
+
+@media screen and (max-width:768px){
+
+  .benefit-grid{
+    display:block !important;
+  }
+
+  .benefit-card{
+    width:100% !important;
+    margin-bottom:20px !important;
+  }
+
+}
