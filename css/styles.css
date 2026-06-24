@@ -1365,3 +1365,18 @@ section.visible {
   }
 
 }
+
+@media (max-width: 768px) {
+
+  .benefit-card {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .benefit-icon {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+}
